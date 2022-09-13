@@ -1,4 +1,4 @@
-namespace WOTModelMod
+namespace WOWSModelMod
 {
 	internal class GROUPINFO
 	{

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace WOTModelMod
+namespace WOWSModelMod
 {
 	internal class VERTICES : IPrimitiveChunk
 	{
@@ -34,7 +34,15 @@ namespace WOTModelMod
 			bool alpha = false;
 			if (header[6] == 105)
 			{
-				skinned = true;
+				if (header[11] == 0)
+                {
+					skinned = true;
+					alpha = true;
+                }
+                else
+                {
+					skinned = true;
+				}	
 			}
 			if (header[6] == 114)
 			{
@@ -101,6 +109,19 @@ namespace WOTModelMod
 			w.Write(header);
 			bool wire = false;
 			bool alpha = false;
+			bool skinned = false;
+			if (header[6] == 105)
+			{
+				if (header[11] == 0)
+				{
+					skinned = true;
+					alpha = true;
+				}
+				else
+				{
+					skinned = true;
+				}
+			}
 			if (header[6] == 114)
 			{
 				wire = true;
@@ -119,7 +140,7 @@ namespace WOTModelMod
 			{
 				for (int k = 0; k < spvts[j].Length; k++)
 				{
-					spvts[j][k].Write(w, alpha, wire);
+					spvts[j][k].Write(w, skinned, alpha, wire);
 				}
 			}
 		}

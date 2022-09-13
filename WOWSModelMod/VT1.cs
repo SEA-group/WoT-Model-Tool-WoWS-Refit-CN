@@ -1,6 +1,6 @@
 using System;
 
-namespace WOTModelMod
+namespace WOWSModelMod
 {
 	internal struct VT1
 	{

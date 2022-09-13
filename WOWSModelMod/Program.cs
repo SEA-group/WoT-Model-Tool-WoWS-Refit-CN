@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace WOTModelMod
+namespace WOWSModelMod
 {
 	internal static class Program
 	{

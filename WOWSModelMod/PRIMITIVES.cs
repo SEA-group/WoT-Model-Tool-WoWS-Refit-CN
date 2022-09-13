@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace WOTModelMod
+namespace WOWSModelMod
 {
 	internal class PRIMITIVES
 	{

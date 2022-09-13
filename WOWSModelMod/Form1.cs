@@ -5,7 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace WOTModelMod
+namespace WOWSModelMod
 {
 	public class Form1 : Form
 	{
@@ -213,7 +213,7 @@ namespace WOTModelMod
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "WOT模型替换 by Lotsbiss, WoWS ver. by SEA group, build 20.07.14b";
+            this.Text = "WOT模型替换 by Lotsbiss, WoWS ver. by SEA group, build 20.09.15a";
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form1_DragEnter);
             this.ResumeLayout(false);

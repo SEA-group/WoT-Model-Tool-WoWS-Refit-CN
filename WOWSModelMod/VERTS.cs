@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace WOTModelMod
+namespace WOWSModelMod
 {
 	internal struct VERTS
 	{
@@ -14,11 +14,13 @@ namespace WOTModelMod
 
 		public VT3 binormal;
 
-		public VT3 reflect;
+		public VT1 radius;
 
 		public byte[] wwwii;
 
 		public string wwstr;
+
+		public bool isSkinned;
 
 		public bool isWire;
 
@@ -28,16 +30,31 @@ namespace WOTModelMod
 		{
 			isAlpha = false;
 			isWire = false;
+			isSkinned = false;
 			if(alpha)
 			{
 				vert = new VT3(r);
-				normal = new VT3(r);
-				tvert = new VT2(r);
-				tangent = default(VT3);
-				binormal = default(VT3);
-				wwwii = new byte[0];
-				wwstr = "0000000000";
-				reflect = normal;
+				if(skinned)
+                {
+					normal = default(VT3);
+					normal.ReadUIntXYZ(r);
+					tvert = new VT2(r);
+					wwwii = r.ReadBytes(5);
+					wwstr = string.Format("{0}{1}{2}{3}{4}", wwwii[0].ToString("X2"), wwwii[1].ToString("X2"), wwwii[2].ToString("X2"), wwwii[3].ToString("X2"), wwwii[4].ToString("X2"));
+					tangent = default(VT3);
+					binormal = default(VT3);
+					isSkinned = true;
+				}
+				else
+                {
+					normal = new VT3(r);
+					tvert = new VT2(r);
+					tangent = default(VT3);
+					binormal = default(VT3);
+					wwwii = new byte[0];
+					wwstr = "0000000000";
+				}
+				radius = default(VT1);
 				isAlpha = true;
 			}
 			else if (wire)
@@ -49,8 +66,7 @@ namespace WOTModelMod
 				binormal = default(VT3);
 				wwwii = new byte[0];
 				wwstr = "0000000000";
-				reflect = default(VT3);
-				reflect.ReadUIntXYZ(r);
+				radius = new VT1(r);
 				isWire = true;
 			}
 			else
@@ -62,6 +78,7 @@ namespace WOTModelMod
 				if (skinned)
 				{
 					wwwii = r.ReadBytes(5);
+					isSkinned = true;
 				}
 				else
 				{
@@ -71,7 +88,7 @@ namespace WOTModelMod
 				tangent.ReadUIntXYZ(r);
 				binormal = default(VT3);
 				binormal.ReadUIntXYZ(r);
-				reflect = normal;
+				radius = default(VT1);
 				if (skinned)
 				{
 					wwstr = string.Format("{0}{1}{2}{3}{4}", wwwii[0].ToString("X2"), wwwii[1].ToString("X2"), wwwii[2].ToString("X2"), wwwii[3].ToString("X2"), wwwii[4].ToString("X2"));
@@ -83,22 +100,30 @@ namespace WOTModelMod
 			}
 		}
 
-		public void Write(BinaryWriter w, bool alpha, bool wire)
+		public void Write(BinaryWriter w, bool skinned, bool alpha, bool wire)
 		{
 			if (alpha)
             {
 				vert.Write(w);
-				normal.Write(w);
-				tvert.Write(w);
+				if (skinned)
+                {
+					normal.WriteUintXYZ(w);
+					tvert.Write(w);
+					w.Write(wwwii);
+				}
+                else
+                {
+					normal.Write(w);
+					tvert.Write(w);
+				}				
 			}
 			else if (wire)
             {
 				vert.Write(w);
 				normal.Write(w);
 				tvert.Write(w);
-                //normal.WriteUintXYZ(w);
-                float tempNum = 0.9991f;
-				w.Write(tempNum);
+                float tempNumAsRadius = 0.9991f;
+				w.Write(tempNumAsRadius);
 			}
             else
             {

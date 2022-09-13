@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Resources;
 using System.Runtime.CompilerServices;
 
-namespace WOTModelMod.Properties
+namespace WOWSModelMod.Properties
 {
 	[DebuggerNonUserCode]
 	[CompilerGenerated]
@@ -23,7 +23,7 @@ namespace WOTModelMod.Properties
 			{
 				if (object.ReferenceEquals(resourceMan, null))
 				{
-					ResourceManager resourceManager = resourceMan = new ResourceManager("WOTModelMod.Properties.Resources", typeof(Resources).Assembly);
+					ResourceManager resourceManager = resourceMan = new ResourceManager("WOWSModelMod.Properties.Resources", typeof(Resources).Assembly);
 				}
 				return resourceMan;
 			}

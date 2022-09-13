@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace WOTModelMod
+namespace WOWSModelMod
 {
 	internal class OBJMODEL
 	{

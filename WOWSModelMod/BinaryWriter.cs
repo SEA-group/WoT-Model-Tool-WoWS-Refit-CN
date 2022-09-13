@@ -1,10 +1,10 @@
 using System.IO;
 
-namespace WOTModelMod
+namespace WOWSModelMod
 {
-	internal class BinaryReader : System.IO.BinaryReader
+	internal class BinaryWriter : System.IO.BinaryWriter
 	{
-		public BinaryReader(Stream input)
+		public BinaryWriter(Stream input)
 			: base(input)
 		{
 		}
@@ -13,7 +13,7 @@ namespace WOTModelMod
 		{
 			while (BaseStream.Position % divlen != 0)
 			{
-				BaseStream.Position++;
+				Write((byte)0);
 			}
 		}
 	}
