@@ -29,14 +29,24 @@ namespace WOTModelMod
 			header = binaryReader.ReadBytes(64);
 			int num = binaryReader.ReadInt32();
 			vts = new VERTS[num];
-			bool wwwi = false;
-			if (header[7] == 105)
+			bool skinned = false;
+			bool wire = false;
+			bool alpha = false;
+			if (header[6] == 105)
 			{
-				wwwi = true;
+				skinned = true;
+			}
+			if (header[6] == 114)
+			{
+				wire = true;
+			}
+			if (header[6] == 0)
+			{
+				alpha = true;
 			}
 			for (int i = 0; i < num; i++)
 			{
-				vts[i] = new VERTS(binaryReader, wwwi);
+				vts[i] = new VERTS(binaryReader, skinned, alpha, wire);
 			}
 			binaryReader.Close();
 		}
@@ -79,8 +89,8 @@ namespace WOTModelMod
 					array[i].vert = nvts[i].vert;
 					array[i].tvert = nvts[i].tvert;
 					array[i].normal = nvts[i].normal;
-					array[i].tan = nvts[i].tan;
-					array[i].bin = nvts[i].bin;
+					array[i].tangent = nvts[i].tangent;
+					array[i].binormal = nvts[i].binormal;
 				}
 				spvts.Insert(Chunkid, array);
 			}
@@ -89,6 +99,16 @@ namespace WOTModelMod
 		public void Write(BinaryWriter w)
 		{
 			w.Write(header);
+			bool wire = false;
+			bool alpha = false;
+			if (header[6] == 114)
+			{
+				wire = true;
+			}
+			if (header[6] == 0)
+			{
+				alpha = true;
+			}
 			int num = 0;
 			for (int i = 0; i < spvts.Count; i++)
 			{
@@ -99,7 +119,7 @@ namespace WOTModelMod
 			{
 				for (int k = 0; k < spvts[j].Length; k++)
 				{
-					spvts[j][k].Write(w);
+					spvts[j][k].Write(w, alpha, wire);
 				}
 			}
 		}

@@ -8,52 +8,107 @@ namespace WOTModelMod
 
 		public VT3 normal;
 
-		public VT3 tan;
-
-		public VT3 bin;
-
 		public VT2 tvert;
+
+		public VT3 tangent;
+
+		public VT3 binormal;
+
+		public VT3 reflect;
 
 		public byte[] wwwii;
 
 		public string wwstr;
 
-		public VERTS(BinaryReader r, bool wwwi)
+		public bool isWire;
+
+		public bool isAlpha;
+
+		public VERTS(BinaryReader r, bool skinned, bool alpha, bool wire)
 		{
-			vert = new VT3(r);
-			normal = default(VT3);
-			normal.ReadUIntXYZ(r);
-			tvert = new VT2(r);
-			if (wwwi)
+			isAlpha = false;
+			isWire = false;
+			if(alpha)
 			{
-				wwwii = r.ReadBytes(5);
-			}
-			else
-			{
+				vert = new VT3(r);
+				normal = new VT3(r);
+				tvert = new VT2(r);
+				tangent = default(VT3);
+				binormal = default(VT3);
 				wwwii = new byte[0];
+				wwstr = "0000000000";
+				reflect = normal;
+				isAlpha = true;
 			}
-			tan = default(VT3);
-			tan.ReadUIntXYZ(r);
-			bin = default(VT3);
-			bin.ReadUIntXYZ(r);
-			if (wwwi)
+			else if (wire)
 			{
-				wwstr = string.Format("{0}{1}{2}{3}{4}", wwwii[0].ToString("X2"), wwwii[1].ToString("X2"), wwwii[2].ToString("X2"), wwwii[3].ToString("X2"), wwwii[4].ToString("X2"));
+				vert = new VT3(r);
+				normal = new VT3(r);
+				tvert = new VT2(r);
+				tangent = default(VT3);
+				binormal = default(VT3);
+				wwwii = new byte[0];
+				wwstr = "0000000000";
+				reflect = default(VT3);
+				reflect.ReadUIntXYZ(r);
+				isWire = true;
 			}
 			else
 			{
-				wwstr = "0000000000";
+				vert = new VT3(r);
+				normal = default(VT3);
+				normal.ReadUIntXYZ(r);
+				tvert = new VT2(r);
+				if (skinned)
+				{
+					wwwii = r.ReadBytes(5);
+				}
+				else
+				{
+					wwwii = new byte[0];
+				}
+				tangent = default(VT3);
+				tangent.ReadUIntXYZ(r);
+				binormal = default(VT3);
+				binormal.ReadUIntXYZ(r);
+				reflect = normal;
+				if (skinned)
+				{
+					wwstr = string.Format("{0}{1}{2}{3}{4}", wwwii[0].ToString("X2"), wwwii[1].ToString("X2"), wwwii[2].ToString("X2"), wwwii[3].ToString("X2"), wwwii[4].ToString("X2"));
+				}
+				else
+				{
+					wwstr = "0000000000";
+				}
 			}
 		}
 
-		public void Write(BinaryWriter w)
+		public void Write(BinaryWriter w, bool alpha, bool wire)
 		{
-			vert.Write(w);
-			normal.WriteUintXYZ(w);
-			tvert.Write(w);
-			w.Write(wwwii);
-			tan.WriteUintXYZ(w);
-			bin.WriteUintXYZ(w);
+			if (alpha)
+            {
+				vert.Write(w);
+				normal.Write(w);
+				tvert.Write(w);
+			}
+			else if (wire)
+            {
+				vert.Write(w);
+				normal.Write(w);
+				tvert.Write(w);
+                //normal.WriteUintXYZ(w);
+                float tempNum = 0.9991f;
+				w.Write(tempNum);
+			}
+            else
+            {
+				vert.Write(w);
+				normal.WriteUintXYZ(w);
+				tvert.Write(w);
+				w.Write(wwwii);
+				tangent.WriteUintXYZ(w);
+				binormal.WriteUintXYZ(w);
+			}
 		}
 
 		public void WriteOBJVert(StreamWriter w)

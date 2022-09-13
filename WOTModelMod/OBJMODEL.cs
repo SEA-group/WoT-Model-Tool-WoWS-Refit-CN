@@ -143,8 +143,8 @@ namespace WOTModelMod
 				{
 					item7.wwstr = dictionary[j];
 					item7.wwwii = GetWWWII(item7.wwstr);
-					item7.bin = default(VT3);
-					item7.tan = default(VT3);
+					item7.binormal = default(VT3);
+					item7.tangent = default(VT3);
 					item7.tvert = list3[list5[j].x];
 					item7.vert = list[list4[j].x];
 					item7.normal = list2[list6[j].x];
@@ -161,8 +161,8 @@ namespace WOTModelMod
 				{
 					item8.wwstr = dictionary[j];
 					item8.wwwii = GetWWWII(item8.wwstr);
-					item8.bin = default(VT3);
-					item8.tan = default(VT3);
+					item8.binormal = default(VT3);
+					item8.tangent = default(VT3);
 					item8.tvert = list3[list5[j].y];
 					item8.vert = list[list4[j].y];
 					item8.normal = list2[list6[j].y];
@@ -179,8 +179,8 @@ namespace WOTModelMod
 				{
 					item9.wwstr = dictionary[j];
 					item9.wwwii = GetWWWII(item9.wwstr);
-					item9.bin = default(VT3);
-					item9.tan = default(VT3);
+					item9.binormal = default(VT3);
+					item9.tangent = default(VT3);
 					item9.tvert = list3[list5[j].z];
 					item9.vert = list[list4[j].z];
 					item9.normal = list2[list6[j].z];
@@ -275,8 +275,8 @@ namespace WOTModelMod
 			{
 				item7.wwstr = "0000000000";
 				item7.wwwii = GetWWWII(item7.wwstr);
-				item7.bin = default(VT3);
-				item7.tan = default(VT3);
+				item7.binormal = default(VT3);
+				item7.tangent = default(VT3);
 				item7.tvert = list3[i];
 				item7.vert = list[i];
 				item7.normal = list2[i];
@@ -285,7 +285,7 @@ namespace WOTModelMod
 			ofdx.AddRange(list4.ToArray());
 		}
 
-		private VT3 genTangent(VT3 v1, VT3 v2, VT2 st1, VT2 st2, VT3 norm)
+		private VT3 GenTangent(VT3 v1, VT3 v2, VT2 st1, VT2 st2, VT3 norm)
 		{
 			float num = st1.x * st2.y - st2.x * st1.y;
 			if (num != 0f)
@@ -314,16 +314,16 @@ namespace WOTModelMod
 				VT3 normal = array[array2[i].x].normal;
 				VT3 normal2 = array[array2[i].y].normal;
 				VT3 normal3 = array[array2[i].z].normal;
-				array[array2[i].x].tan += genTangent(vert2 - vert, vert3 - vert, tvert2 - tvert, tvert3 - tvert, normal);
-				array[array2[i].y].tan += genTangent(vert3 - vert2, vert - vert2, tvert3 - tvert2, tvert - tvert2, normal2);
-				array[array2[i].z].tan += genTangent(vert - vert3, vert2 - vert3, tvert - tvert3, tvert2 - tvert3, normal3);
+				array[array2[i].x].tangent += GenTangent(vert2 - vert, vert3 - vert, tvert2 - tvert, tvert3 - tvert, normal);
+				array[array2[i].y].tangent += GenTangent(vert3 - vert2, vert - vert2, tvert3 - tvert2, tvert - tvert2, normal2);
+				array[array2[i].z].tangent += GenTangent(vert - vert3, vert2 - vert3, tvert - tvert3, tvert2 - tvert3, normal3);
 			}
 			for (int j = 0; j < ots.Count; j++)
 			{
 				array[j].normal.Normalize();
-				array[j].tan.Normalize();
-				array[j].bin = array[j].normal.Cross(array[j].tan);
-				array[j].bin.Normalize();
+				array[j].tangent.Normalize();
+				array[j].binormal = array[j].normal.Cross(array[j].tangent);
+				array[j].binormal.Normalize();
 			}
 			return array;
 		}

@@ -50,128 +50,175 @@ namespace WOTModelMod
 
 		private void InitializeComponent()
 		{
-			listBox1 = new System.Windows.Forms.ListBox();
-			button1 = new System.Windows.Forms.Button();
-			textBox1 = new System.Windows.Forms.TextBox();
-			button2 = new System.Windows.Forms.Button();
-			button3 = new System.Windows.Forms.Button();
-			checkBox1 = new System.Windows.Forms.CheckBox();
-			listBox2 = new System.Windows.Forms.ListBox();
-			button4 = new System.Windows.Forms.Button();
-			button5 = new System.Windows.Forms.Button();
-			button6 = new System.Windows.Forms.Button();
-			button7 = new System.Windows.Forms.Button();
-			checkBox2 = new System.Windows.Forms.CheckBox();
-			SuspendLayout();
-			listBox1.Anchor = (System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left);
-			listBox1.FormattingEnabled = true;
-			listBox1.ItemHeight = 12;
-			listBox1.Location = new System.Drawing.Point(12, 12);
-			listBox1.Name = "listBox1";
-			listBox1.Size = new System.Drawing.Size(200, 160);
-			listBox1.TabIndex = 0;
-			listBox1.SelectedIndexChanged += new System.EventHandler(listBox1_SelectedIndexChanged);
-			button1.Anchor = (System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left);
-			button1.Location = new System.Drawing.Point(218, 149);
-			button1.Name = "button1";
-			button1.Size = new System.Drawing.Size(75, 23);
-			button1.TabIndex = 1;
-			button1.Text = "导出";
-			button1.UseVisualStyleBackColor = true;
-			button1.Click += new System.EventHandler(button1_Click);
-			textBox1.Anchor = (System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right);
-			textBox1.Location = new System.Drawing.Point(218, 12);
-			textBox1.Name = "textBox1";
-			textBox1.Size = new System.Drawing.Size(430, 21);
-			textBox1.TabIndex = 2;
-			button2.Location = new System.Drawing.Point(492, 39);
-			button2.Name = "button2";
-			button2.Size = new System.Drawing.Size(75, 23);
-			button2.TabIndex = 3;
-			button2.Text = "替换";
-			button2.UseVisualStyleBackColor = true;
-			button2.Click += new System.EventHandler(button2_Click);
-			button3.Anchor = (System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left);
-			button3.Location = new System.Drawing.Point(573, 68);
-			button3.Name = "button3";
-			button3.Size = new System.Drawing.Size(75, 23);
-			button3.TabIndex = 4;
-			button3.Text = "保存";
-			button3.UseVisualStyleBackColor = true;
-			button3.Click += new System.EventHandler(button3_Click);
-			checkBox1.AutoSize = true;
-			checkBox1.Location = new System.Drawing.Point(426, 43);
-			checkBox1.Name = "checkBox1";
-			checkBox1.Size = new System.Drawing.Size(60, 16);
-			checkBox1.TabIndex = 5;
-			checkBox1.Text = "翻转面";
-			checkBox1.UseVisualStyleBackColor = true;
-			listBox2.Anchor = (System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left);
-			listBox2.FormattingEnabled = true;
-			listBox2.ItemHeight = 12;
-			listBox2.Location = new System.Drawing.Point(218, 39);
-			listBox2.Name = "listBox2";
-			listBox2.Size = new System.Drawing.Size(156, 100);
-			listBox2.TabIndex = 6;
-			listBox2.SelectedIndexChanged += new System.EventHandler(listBox2_SelectedIndexChanged);
-			button4.Location = new System.Drawing.Point(573, 39);
-			button4.Name = "button4";
-			button4.Size = new System.Drawing.Size(75, 23);
-			button4.TabIndex = 7;
-			button4.Text = "添加";
-			button4.UseVisualStyleBackColor = true;
-			button4.Click += new System.EventHandler(button4_Click);
-			button5.Location = new System.Drawing.Point(299, 149);
-			button5.Name = "button5";
-			button5.Size = new System.Drawing.Size(75, 23);
-			button5.TabIndex = 8;
-			button5.Text = "删除";
-			button5.UseVisualStyleBackColor = true;
-			button5.Click += new System.EventHandler(button5_Click);
-			button6.Enabled = false;
-			button6.Location = new System.Drawing.Point(573, 149);
-			button6.Name = "button6";
-			button6.Size = new System.Drawing.Size(75, 23);
-			button6.TabIndex = 9;
-			button6.Text = "材质信息";
-			button6.UseVisualStyleBackColor = true;
-			button6.Click += new System.EventHandler(button6_Click);
-			button7.Location = new System.Drawing.Point(573, 97);
-			button7.Name = "button7";
-			button7.Size = new System.Drawing.Size(75, 23);
-			button7.TabIndex = 10;
-			button7.Text = "覆盖保存";
-			button7.UseVisualStyleBackColor = true;
-			button7.Click += new System.EventHandler(button7_Click);
-			checkBox2.AutoSize = true;
-			checkBox2.Location = new System.Drawing.Point(483, 72);
-			checkBox2.Name = "checkBox2";
-			checkBox2.Size = new System.Drawing.Size(84, 16);
-			checkBox2.TabIndex = 11;
-			checkBox2.Text = "只替换顶点";
-			checkBox2.UseVisualStyleBackColor = true;
-			AllowDrop = true;
-			base.AutoScaleDimensions = new System.Drawing.SizeF(6f, 12f);
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			base.ClientSize = new System.Drawing.Size(660, 178);
-			base.Controls.Add(checkBox2);
-			base.Controls.Add(button7);
-			base.Controls.Add(button6);
-			base.Controls.Add(button5);
-			base.Controls.Add(button4);
-			base.Controls.Add(listBox2);
-			base.Controls.Add(checkBox1);
-			base.Controls.Add(button3);
-			base.Controls.Add(button2);
-			base.Controls.Add(textBox1);
-			base.Controls.Add(button1);
-			base.Controls.Add(listBox1);
-			base.Name = "Form1";
-			Text = "WOT模型替换     --by Lotsbiss";
-			base.DragDrop += new System.Windows.Forms.DragEventHandler(Form1_DragDrop);
-			base.DragEnter += new System.Windows.Forms.DragEventHandler(Form1_DragEnter);
-			ResumeLayout(false);
-			PerformLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.SuspendLayout();
+            // 
+            // listBox1
+            // 
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 12;
+            this.listBox1.Location = new System.Drawing.Point(10, 12);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(326, 208);
+            this.listBox1.TabIndex = 0;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.Location = new System.Drawing.Point(506, 197);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "导出";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(344, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(509, 21);
+            this.textBox1.TabIndex = 2;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(425, 197);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "替换";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button3.Location = new System.Drawing.Point(776, 68);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "保存";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(668, 43);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(60, 16);
+            this.checkBox1.TabIndex = 5;
+            this.checkBox1.Text = "翻转面";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // listBox2
+            // 
+            this.listBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 12;
+            this.listBox2.Location = new System.Drawing.Point(344, 39);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(318, 148);
+            this.listBox2.TabIndex = 6;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(344, 197);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "添加";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(587, 197);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "删除";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Enabled = false;
+            this.button6.Location = new System.Drawing.Point(776, 197);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 9;
+            this.button6.Text = "材质信息";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(776, 39);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 10;
+            this.button7.Text = "覆盖保存";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(668, 72);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(84, 16);
+            this.checkBox2.TabIndex = 11;
+            this.checkBox2.Text = "只替换顶点";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            this.AllowDrop = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(864, 235);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.listBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Form1";
+            this.Text = "WOT模型替换 by Lotsbiss, WoWS ver. by SEA group";
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form1_DragEnter);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
 		}
 
 		public Form1()

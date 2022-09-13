@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectGuid>{E65243C3-5273-47B0-9735-0BD677C70990}</ProjectGuid>
+    <ProjectGuid>{7CC1491B-0070-48A4-A08F-8E5907333CAE}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>WinExe</OutputType>
@@ -50,19 +50,35 @@
     <Compile Include="WOTModelMod\BinaryWriter.cs" />
     <Compile Include="WOTModelMod\COMMONCHUNK.cs" />
     <Compile Include="WOTModelMod\FIDX.cs" />
-    <Compile Include="WOTModelMod\Form1.cs" />
+    <Compile Include="WOTModelMod\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="WOTModelMod\GROUPINFO.cs" />
     <Compile Include="WOTModelMod\INDICES.cs" />
     <Compile Include="WOTModelMod\IPrimitiveChunk.cs" />
     <Compile Include="WOTModelMod\MATERIAL.cs" />
-    <Compile Include="WOTModelMod\MatForm.cs" />
+    <Compile Include="WOTModelMod\MatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="WOTModelMod\OBJMODEL.cs" />
     <Compile Include="WOTModelMod\PRIMITIVES.cs" />
     <Compile Include="WOTModelMod\Program.cs" />
     <Compile Include="WOTModelMod\VERTICES.cs" />
     <Compile Include="WOTModelMod\VERTS.cs" />
+    <Compile Include="WOTModelMod\VT1.cs" />
     <Compile Include="WOTModelMod\VT2.cs" />
     <Compile Include="WOTModelMod\VT3.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WOTModelMod\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WOTModelMod\MatForm.resx">
+      <DependentUpon>MatForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WOTModelMod\DXRender.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -41,33 +41,33 @@ namespace WOTModelMod
 
 		private void InitializeComponent()
 		{
-			textBox1 = new System.Windows.Forms.TextBox();
-			button1 = new System.Windows.Forms.Button();
-			SuspendLayout();
-			textBox1.Anchor = (System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right);
-			textBox1.Location = new System.Drawing.Point(1, 1);
-			textBox1.Multiline = true;
-			textBox1.Name = "textBox1";
-			textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			textBox1.Size = new System.Drawing.Size(477, 444);
-			textBox1.TabIndex = 0;
-			button1.Anchor = (System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right);
-			button1.Location = new System.Drawing.Point(392, 451);
-			button1.Name = "button1";
-			button1.Size = new System.Drawing.Size(75, 23);
-			button1.TabIndex = 1;
-			button1.Text = "保存";
-			button1.UseVisualStyleBackColor = true;
-			button1.Click += new System.EventHandler(button1_Click);
-			base.AutoScaleDimensions = new System.Drawing.SizeF(6f, 12f);
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			base.ClientSize = new System.Drawing.Size(479, 486);
-			base.Controls.Add(button1);
-			base.Controls.Add(textBox1);
-			base.Name = "MatForm";
-			Text = "MatForm";
-			ResumeLayout(false);
-			PerformLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MatForm));
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // textBox1
+            // 
+            resources.ApplyResources(this.textBox1, "textBox1");
+            this.textBox1.Name = "textBox1";
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // MatForm
+            // 
+            resources.ApplyResources(this, "$this");
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
+            this.Name = "MatForm";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
 		}
 	}
 }

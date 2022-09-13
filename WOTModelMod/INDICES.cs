@@ -14,7 +14,7 @@ namespace WOTModelMod
 
 		private List<FIDX[]> fdx;
 
-		private List<GROUPINFO> gpis;
+        private List<GROUPINFO> gpis;
 
 		public int DataLen => bData.Length;
 
