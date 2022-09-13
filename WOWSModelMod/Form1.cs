@@ -196,7 +196,7 @@ namespace WOWSModelMod
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
-            this.Text = "WOT模型替换 by Lotsbiss, WoWS ver. by SEA group, build 2022.08.12a";
+            this.Text = "WOT模型替换 by Lotsbiss, WoWS ver. by SEA group, build 2022.09.12a";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form1_DragEnter);
