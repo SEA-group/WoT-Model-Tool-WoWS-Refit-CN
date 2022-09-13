@@ -3,9 +3,12 @@
 **修改自Lotsbiss的WOT模型替换。因原作者不允许公开分享原版工具（芝士条说的），原则上此工具也不对外分享。**
 
 ## 下载
-请到[release](https://github.com/SEA-group/WoT-Model-Tool-WoWS-Refit/releases)中寻找最新版本
+请到[release](https://github.com/SEA-group/WoT-Model-Tool-WoWS-Refit-CN/releases)中寻找最新版本
 
 ## 更新日志
+
+### 2022.08.12a
+* 添加了对xyznuv2tb顶点类型的支持（炮弹气流模型）。受限于obj格式，目前尚无法导入双uv模型。
 
 ### 2022.03.29a
 * 修复了读取的obj顶点数大于65535时报错的问题。
