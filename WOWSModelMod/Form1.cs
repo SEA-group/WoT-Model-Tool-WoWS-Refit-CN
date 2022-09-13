@@ -72,7 +72,7 @@ namespace WOWSModelMod
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(13, 16);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(433, 276);
             this.listBox1.TabIndex = 0;
@@ -82,11 +82,11 @@ namespace WOWSModelMod
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button1.Location = new System.Drawing.Point(675, 263);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 31);
             this.button1.TabIndex = 1;
-            this.button1.Text = "å¯¼å‡º";
+            this.button1.Text = "µ¼³ö";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -95,7 +95,7 @@ namespace WOWSModelMod
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(459, 16);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(677, 22);
             this.textBox1.TabIndex = 2;
@@ -103,11 +103,11 @@ namespace WOWSModelMod
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(567, 263);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 31);
             this.button2.TabIndex = 3;
-            this.button2.Text = "æ›¿æ¢";
+            this.button2.Text = "Ìæ»»";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -115,23 +115,23 @@ namespace WOWSModelMod
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button3.Location = new System.Drawing.Point(1035, 91);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 31);
             this.button3.TabIndex = 4;
-            this.button3.Text = "ä¿å­˜";
+            this.button3.Text = "±£´æ¸±±¾";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(891, 57);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Location = new System.Drawing.Point(891, 58);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(72, 21);
+            this.checkBox1.Size = new System.Drawing.Size(103, 21);
             this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "ç¿»è½¬é¢";
+            this.checkBox1.Text = "·­×ªÃæ";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // listBox2
@@ -141,7 +141,7 @@ namespace WOWSModelMod
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 16;
             this.listBox2.Location = new System.Drawing.Point(459, 52);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(4);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(423, 196);
             this.listBox2.TabIndex = 6;
@@ -150,22 +150,22 @@ namespace WOWSModelMod
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(459, 263);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 31);
             this.button4.TabIndex = 7;
-            this.button4.Text = "æ·»åŠ ";
+            this.button4.Text = "Ìí¼Ó";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(783, 263);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(100, 31);
             this.button5.TabIndex = 8;
-            this.button5.Text = "åˆ é™¤";
+            this.button5.Text = "É¾³ı";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -173,34 +173,34 @@ namespace WOWSModelMod
             // 
             this.button6.Enabled = false;
             this.button6.Location = new System.Drawing.Point(1035, 263);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(100, 31);
             this.button6.TabIndex = 9;
-            this.button6.Text = "æè´¨ä¿¡æ¯";
+            this.button6.Text = "²ÄÖÊĞÅÏ¢";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(1035, 52);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(100, 31);
             this.button7.TabIndex = 10;
-            this.button7.Text = "è¦†ç›–ä¿å­˜";
+            this.button7.Text = "¸²¸Ç±£´æ";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(891, 96);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox2.Location = new System.Drawing.Point(891, 97);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(100, 21);
+            this.checkBox2.Size = new System.Drawing.Size(111, 21);
             this.checkBox2.TabIndex = 11;
-            this.checkBox2.Text = "åªæ›¿æ¢é¡¶ç‚¹";
+            this.checkBox2.Text = "Ö»Ìæ»»¶¥µã";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // Form1
@@ -209,7 +209,7 @@ namespace WOWSModelMod
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1152, 313);
+            this.ClientSize = new System.Drawing.Size(1152, 307);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -222,11 +222,12 @@ namespace WOWSModelMod
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
+            this.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
-            this.Text = "WOTæ¨¡å‹æ›¿æ¢ by Lotsbiss, WoWS ver. by SEA group, build 20.12.09a";
+            this.Text = "WOTÄ£ĞÍÌæ»» by Lotsbiss, WoWS ver. by SEA group, build 22.03.29a";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form1_DragEnter);
@@ -309,7 +310,7 @@ namespace WOWSModelMod
 			}
 			else
 			{
-				MessageBox.Show("è¯·å…ˆé€‰ä¸­éœ€è¦å¯¼å‡ºçš„æ¨¡å—");
+				MessageBox.Show("ÇëÏÈÑ¡ÖĞĞèÒªµ¼³öµÄÄ£¿é");
 			}
 		}
 
@@ -333,7 +334,7 @@ namespace WOWSModelMod
 			}
 			else if (listBox1.Items.Count > 0 && listBox1.SelectedIndex == -1)
 			{
-				MessageBox.Show("è¯·å…ˆé€‰ä¸­éœ€è¦å¯¼å…¥çš„æ¨¡å—");
+				MessageBox.Show("ÇëÏÈÑ¡ÖĞĞèÒªµ¼ÈëµÄÄ£¿é");
 			}
 		}
 
@@ -384,7 +385,7 @@ namespace WOWSModelMod
 			}
 			else if (listBox1.Items.Count > 0 && listBox1.SelectedIndex == -1)
 			{
-				MessageBox.Show("è¯·å…ˆé€‰ä¸­éœ€è¦å¯¼å…¥çš„æ¨¡å—");
+				MessageBox.Show("ÇëÏÈÑ¡ÖĞĞèÒªµ¼ÈëµÄÄ£¿é");
 			}
 		}
 
@@ -396,7 +397,7 @@ namespace WOWSModelMod
 			}
 			if (listBox2.Items.Count == 1)
 			{
-				MessageBox.Show("ä¸èƒ½åˆ é™¤");
+				MessageBox.Show("²»¿ÉÉ¾³ı");
 				return;
 			}
 			curPrims.RemoveObj(listBox1.SelectedIndex, listBox2.SelectedIndex);

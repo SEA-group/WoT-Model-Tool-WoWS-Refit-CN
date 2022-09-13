@@ -107,17 +107,17 @@ namespace WOWSModelMod
 				else if (array[0] == "f")
 				{
 					string[] array2 = array[1].Split(separator2, StringSplitOptions.RemoveEmptyEntries);
-					item4.x = Convert.ToUInt16(array2[0]) - 1;
-					item5.x = Convert.ToUInt16(array2[1]) - 1;
-					item6.x = Convert.ToUInt16(array2[2]) - 1;
+					item4.x = int.Parse(array2[0]) - 1;
+					item5.x = int.Parse(array2[1]) - 1;
+					item6.x = int.Parse(array2[2]) - 1;
 					array2 = array[2].Split(separator2, StringSplitOptions.RemoveEmptyEntries);
-					item4.y = Convert.ToUInt16(array2[0]) - 1;
-					item5.y = Convert.ToUInt16(array2[1]) - 1;
-					item6.y = Convert.ToUInt16(array2[2]) - 1;
+					item4.y = int.Parse(array2[0]) - 1;
+					item5.y = int.Parse(array2[1]) - 1;
+					item6.y = int.Parse(array2[2]) - 1;
 					array2 = array[3].Split(separator2, StringSplitOptions.RemoveEmptyEntries);
-					item4.z = Convert.ToUInt16(array2[0]) - 1;
-					item5.z = Convert.ToUInt16(array2[1]) - 1;
-					item6.z = Convert.ToUInt16(array2[2]) - 1;
+					item4.z = int.Parse(array2[0]) - 1;
+					item5.z = int.Parse(array2[1]) - 1;
+					item6.z = int.Parse(array2[2]) - 1;
 					dictionary.Add(list4.Count, text);
 					list4.Add(item4);
 					list5.Add(item5);
